@@ -11,7 +11,7 @@ export default {
     }
 
     const order = await request.json();
-    const totalCents = order.items.reduce(
+    const totalCents = (order.items ?? []).reduce(
       (sum, item) => sum + item.unitPriceCents * item.quantity,
       0,
     );

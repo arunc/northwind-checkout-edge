@@ -34,3 +34,11 @@ test("checkout accepts an empty collection", async () => {
     orderId: "order-002", totalCents: 0,
   });
 });
+
+test("checkout treats missing items as an empty collection", async () => {
+  const response = await checkout({ orderId: "order-003" });
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), {
+    orderId: "order-003", totalCents: 0,
+  });
+});
