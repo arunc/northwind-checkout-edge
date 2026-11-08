@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "northwind-checkout-edge",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-08",
+  "workers_dev": true,
+  "upload_source_maps": true,
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "issues": { "enabled": true }
+  }
+}
